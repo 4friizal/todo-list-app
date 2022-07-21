@@ -3,9 +3,10 @@ import Home from "../pages/Home";
 import DetailTodo from "../pages/DetailTodo";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.todoist.com/rest/v1/";
-axios.defaults.headers.common["Authorization"] =
-  "Bearer f4f486483204cee08a078ce8bd8eeb356fa1a944";
+axios.defaults.baseURL = `${process.env.REACT_APP_API_URL}`;
+axios.defaults.headers.common[
+  "Authorization"
+] = `Bearer ${process.env.REACT_APP_API_KEY}`;
 
 const App = () => {
   return (
